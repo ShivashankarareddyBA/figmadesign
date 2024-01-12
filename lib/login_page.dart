@@ -7,13 +7,23 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
-class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
+class _LoginPageState extends State<LoginPage>
+    with SingleTickerProviderStateMixin {
   late TabController tabController;
+  //final _formKey = GlobalKey<FormState>();
+  //final TextEditingController _emailController = TextEditingController();
+  //final TextEditingController _passwordController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
     tabController = TabController(length: 4, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    tabController.dispose();
   }
 
   @override
@@ -61,7 +71,7 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 30,
           ),
           SizedBox(
             width: 450,
@@ -104,107 +114,57 @@ class _LoginPageState extends State<LoginPage> with TickerProviderStateMixin {
           const SizedBox(
             height: 30,
           ),
-          Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            elevation: 10,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.1),
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: TabBar(
-                indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.white,
-                ),
-                controller: tabController,
-                isScrollable: true,
-                labelPadding: const EdgeInsets.symmetric(horizontal: 30),
-                tabs: const [
-                  Tab(
-                    child: Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 1,
-                  ),
-                  Tab(
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            child: TabBarView(
-              controller: tabController,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
               children: [
-                // Login Tab Content
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: [
-                      const TextField(
-                        decoration: InputDecoration(
-                          labelText: 'Username',
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      const TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      ElevatedButton(
-                        onPressed: () {
-                          // Handle login button press
-                        },
-                        child: const Text('Login'),
-                      ),
-                    ],
-                  ),
+                const SizedBox(
+                  height: 30,
                 ),
-
-                // Sign Up Tab Content
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: [
-                      const TextField(
-                        decoration: InputDecoration(
-                          labelText: 'Email address',
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 248, 247, 247),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(4),
+                    child: Column(
+                      children: [
+                        TabBar(
+                          unselectedLabelColor: Colors.black,
+                          indicatorColor:
+                              const Color.fromRGBO(255, 255, 255, 1),
+                          indicatorWeight: 2,
+                          labelColor: Colors.redAccent,
+                          indicator: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          controller: tabController,
+                          //isScrollable: true,
+                          //labelPadding: const EdgeInsets.symmetric(horizontal: 30),
+                          tabs: const [
+                            Tab(
+                              child: Text(
+                                "Login",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
+                            Tab(
+                              child: Text(
+                                "Sign Up",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      const SizedBox(height: 16),
-                      const TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          labelText: 'Password',
-                        ),
-                      ),
-                      const SizedBox(height: 16),
-                      ElevatedButton(
-                        onPressed: () {
-                          // Handle sign-up button press
-                        },
-                        child: const Text('Sign Up'),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
