@@ -1,4 +1,5 @@
-import 'package:figmadesign/login_page.dart';
+import 'package:figmadesign/login_screen.dart';
+import 'package:figmadesign/tabbar_pages/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LoginPage(),
+      home: const Login(),
     );
   }
 }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class AuthScreen extends StatefulWidget {
+  const AuthScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<AuthScreen> createState() => _AuthScreenState();
 }
 
-class _LoginPageState extends State<LoginPage>
+class _AuthScreenState extends State<AuthScreen>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
   //final _formKey = GlobalKey<FormState>();
@@ -17,7 +17,7 @@ class _LoginPageState extends State<LoginPage>
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 4, vsync: this);
+    tabController = TabController(length: 2, vsync: this);
   }
 
   @override
