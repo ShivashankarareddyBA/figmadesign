@@ -23,7 +23,7 @@ if (flutterVersionName == null) {
 }
 
 android {
-    namespace "com.example.figmadesign"
+    namespace "com.ssreddy.figmadesign"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
@@ -65,3 +65,6 @@ flutter {
 }
 
 dependencies {}
+
+id("com.google.gms.google-services")
+

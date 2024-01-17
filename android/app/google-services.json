@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "670119868355",
+    "firebase_url": "https://figmadesign-44d60-default-rtdb.firebaseio.com",
+    "project_id": "figmadesign-44d60",
+    "storage_bucket": "figmadesign-44d60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670119868355:android:95b08a6d345aed6485ef76",
+        "android_client_info": {
+          "package_name": "com.ssreddy.figmadesign"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk6VPEnrT5nUYcPVTxcWiGf_OQ9iJdqnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
