@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomTextField extends StatefulWidget {
   final TextEditingController? controller;
   final IconData? data;
@@ -12,6 +13,7 @@ class CustomTextField extends StatefulWidget {
   TextInputType? keyboardType;
 
   CustomTextField({
+    Key? key,
     this.controller,
     this.data,
     this.enabled,
@@ -21,9 +23,10 @@ class CustomTextField extends StatefulWidget {
     this.labelText,
     this.keyboardType,
     this.labelPadding,
-  });
+  }) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _CustomTextFieldState createState() => _CustomTextFieldState();
 }
 
