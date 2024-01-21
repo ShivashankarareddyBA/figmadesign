@@ -40,7 +40,7 @@ class _SignUpState extends State<SignUp> {
                   data: Icons.phone,
                   controller: emailController,
                   hintText: "Phone numer",
-                  labelText: "phone",
+                  labelText: "Mobile",
                   keyboardType: TextInputType.text,
                   labelPadding: EdgeInsets.zero,
                   isObscure: false,
