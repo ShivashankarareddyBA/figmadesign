@@ -15,6 +15,11 @@ class _SignUpState extends State<SignUp> {
   TextEditingController passwordController = TextEditingController();
   // bool _obscureText = true;
 
+  Future<void> formvalidation() async {
+    if (passwordController == true) ;
+    {}
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
