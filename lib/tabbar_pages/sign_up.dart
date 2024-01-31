@@ -16,8 +16,14 @@ class _SignUpState extends State<SignUp> {
   // bool _obscureText = true;
 
   Future<void> formvalidation() async {
-    if (passwordController == true) ;
-    {}
+    if (passwordController == null) if (passwordController.text.isNotEmpty &&
+        emailController.text.isNotEmpty) {
+      // save th data
+    } else
+    //will display error meassage "please fill al the filed"
+    {
+      //password donot match
+    }
   }
 
   @override
